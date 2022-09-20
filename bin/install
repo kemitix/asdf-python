@@ -26,7 +26,7 @@ install_python() {
     $(python_build_path) "$version" "$install_path" -p < $patch_file
   else
     echo "python-build $version $install_path"
-    $(python_build_path) "$version" "$install_path"
+    PYTHON_CONFIGURE_OPTS="--enable-shared" $(python_build_path) "$version" "$install_path"
   fi
 }
 
